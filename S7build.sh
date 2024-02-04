@@ -168,6 +168,7 @@ FUNC_BUILD_RAMDISK()
 	echo SEANDROIDENFORCE >> image-new.img
 	mkdir $RDIR/build/kernel-temp 2>/dev/null
 	mv image-new.img $RDIR/build/kernel-temp/$MODEL-$OS-$GPU-boot.img
+	cp $RDIR/build/kernel-temp/$MODEL-$OS-$GPU-boot.img $RDIR/build
 	rm -rf $RDIR/build/temp
 
 }
