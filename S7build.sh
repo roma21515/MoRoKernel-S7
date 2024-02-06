@@ -30,9 +30,9 @@ DEFCONFIG_S7FLAT=moro-flat_defconfig
 DEFCONFIG_N7FE=moro-grace_defconfig
 
 
-K_VERSION="v1.0"
+K_VERSION="v1.1"
 K_SUBVER="0"
-K_BASE="CUA1"
+K_BASE="OCLittle"
 K_NAME="RoMoKernel"
 export KBUILD_BUILD_VERSION="1"
 
