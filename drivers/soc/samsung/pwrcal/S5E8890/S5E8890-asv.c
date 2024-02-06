@@ -267,7 +267,7 @@ retry:
 		BUG();
 	get_max_min_freq_lv(domain, asv_tbl_info.asv_table_ver, &max_lv, &min_lv);
 	if (max_lv >= 0)
-		asv_dvfs_little->table->max_freq = domain->level_list[max_lv] * 1000;
+		asv_dvfs_little->table->max_freq = 1898000;
 	if (min_lv >= 0)
 		asv_dvfs_little->table->min_freq = domain->level_list[min_lv] * 1000;
 
