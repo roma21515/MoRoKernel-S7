@@ -4,10 +4,10 @@
 #
 
 ui_print("***********************************************");
-ui_print("* MoRoKernel AIO (Samsung, AOSP and Treble)");
+ui_print("* RomoKernel LittleOC(Samsung, AOSP and Treble)");
 ui_print("* For Samsung Galaxy S7");
 ui_print("* Developed by MoroGoku");
-ui_print("* https://www.espdroids.com");
+ui_print("* Modifed by Roma21515");
 ui_print("***********************************************");
 
 # Copy scripts

@@ -78,15 +78,14 @@ Select the language you want for the installer",
     "@default",
     "lang.prop",
   
-    "Español",	"Bienvenido al instalador",	1,	#-- selected.0 = 1
-    "English",	"Welcome to Installer
-Sorry for my bad English ;)",			0	#-- selected.0 = 2
+   "Español",	"Bienvenido al instalador",	0,	#-- selected.0 = 1
+   "English",	"Welcome to Installer",			1	#-- selected.0 = 2
  		
 );
 
 if prop("lang.prop","selected.0")=="1" then
 	loadlang("langs/es.lang");
-	setvar("changelog", "changelog_es.txt");
+	setvar("changelog", "changelog_en.txt");
 endif;
 if prop("lang.prop","selected.0")=="2" then
 	loadlang("langs/en.lang");

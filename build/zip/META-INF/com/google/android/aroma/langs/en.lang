@@ -58,7 +58,7 @@ welcome.title=Welcome
 welcome.text1=You are about to Installing
 welcome.text2= KERNEL INFORMATION
 welcome.text3=ONLY FOR
-welcome.text4=Installation of the <b>MoRokernel</b> for <b>Galaxy S8</b>.
+welcome.text4=Installation of the <b>RoMokernel</b> for <b>Galaxy S7</b>.
 welcome.version=VERSION
 welcome.codename=CODENAME
 welcome.updated=UPDATED
@@ -73,7 +73,7 @@ terms.confirm=Please check the agreement...
 
 # Changelog
 changelog.title=CHANGELOG
-changelog.desc=Instalation of <b>MoRoKernel</b> for <b>Galaxy S7.</b>
+changelog.desc=Instalation of <b>RoMoKernel</b> for <b>Galaxy S7.</b>
 
 # Instalacion
 menu.title=MoRoKernel Instalation
@@ -81,7 +81,7 @@ menu.desc=ROM Detected:
 menu.group1=Root Options
 menu.1=Without root
 menu.1desc=Recommended if you are installing another type of root on your own.
-menu.2=Magisk v23.0
+menu.2=Magisk Delta v26.1
 menu.2desc=Magisk with Hide enabled.
 menu.group2=Other options
 menu.3=MTweaks v2.18.1

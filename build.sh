@@ -9,7 +9,7 @@
 # -----
 export ARCH=arm64
 export SUBARCH=arm64
-export BUILD_CROSS_COMPILE=/home/moro/kernel/toolchains/ubertc-6.5/bin/aarch64-linux-android-
+export BUILD_CROSS_COMPILE=/home/romasik/Android/MoroKernel/gcc-linaro-6.5.0-2018.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
 export CROSS_COMPILE=$BUILD_CROSS_COMPILE
 export BUILD_JOB_NUMBER=`grep processor /proc/cpuinfo|wc -l`
 
@@ -30,10 +30,10 @@ DEFCONFIG_S7FLAT=moro-flat_defconfig
 DEFCONFIG_N7FE=moro-grace_defconfig
 
 
-K_VERSION="v8.8"
-K_SUBVER="8"
-K_BASE="CUA1"
-K_NAME="MoRoKernel"
+K_VERSION="v1.1"
+K_SUBVER="0"
+K_BASE="OCLittle"
+K_NAME="RoMoKernel"
 export KBUILD_BUILD_VERSION="1"
 
 
@@ -117,9 +117,11 @@ FUNC_BUILD_KERNEL()
 	# COMPILE
 	make -j$BUILD_JOB_NUMBER ARCH=$ARCH \
 			CROSS_COMPILE=$BUILD_CROSS_COMPILE \
+			CFLAGS="-O2" \
 			tmp_defconfig || exit -1
 	make -j$BUILD_JOB_NUMBER ARCH=$ARCH \
-			CROSS_COMPILE=$BUILD_CROSS_COMPILE || exit -1
+			CROSS_COMPILE=$BUILD_CROSS_COMPILE \
+			CFLAGS="-O2" || exit -1
 	echo ""
 
 	rm -f $RDIR/arch/$ARCH/configs/tmp_defconfig 2>/dev/null
@@ -168,6 +170,7 @@ FUNC_BUILD_RAMDISK()
 	echo SEANDROIDENFORCE >> image-new.img
 	mkdir $RDIR/build/kernel-temp 2>/dev/null
 	mv image-new.img $RDIR/build/kernel-temp/$MODEL-$OS-$GPU-boot.img
+	cp $RDIR/build/kernel-temp/$MODEL-$OS-$GPU-boot.img $RDIR/build
 	rm -rf $RDIR/build/temp
 
 }
@@ -258,9 +261,10 @@ echo "(4) S7 Edge - Lineage 16"
 echo "(5) S7 Edge - Lineage 17/18"
 echo "(6) S7 Edge - TREBLE"
 echo "(7) N7 FE - Samsung Q"
+echo "(8) S7 Flat - Samsung Q"
 echo ""
 echo "S7 AllInOne: OREO + PIE + Lineage + Treble"
-echo "(8) S7 AllInOne: OREO + PIE + Q + AOSP + TREBLE"
+echo "(9) S7 AllInOne: OREO + PIE + Q + AOSP + TREBLE"
 echo ""
 echo "**************************************"
 echo ""
@@ -381,6 +385,22 @@ elif [[ $prompt == "7" ]]; then
     MAIN
     
 elif [[ $prompt == "8" ]]; then
+
+    echo "S7 Flat - Samsung Q Selected"
+
+    OS=twQ
+    ANDROID=9
+    MTP=sam
+    GPU=r29
+    MODEL=G930
+    OS_DEFCONFIG=$DEFCONFIG_PIE
+    DEVICE_DEFCONFIG=$DEFCONFIG_S7FLAT
+    PERMISSIVE=yes
+    ZIP=yes
+    ZIP_NAME=$K_NAME-$OS-$MODEL-$K_BASE-$K_VERSION.zip
+    MAIN
+    
+elif [[ $prompt == "9" ]]; then
 
     echo "S7 AllInOne: OREO + PIE + AOSP"
 
