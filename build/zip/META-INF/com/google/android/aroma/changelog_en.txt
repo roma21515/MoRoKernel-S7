@@ -15,7 +15,7 @@
 <*>Magisk v26.1-delta</*>
 <*>Little core overclocked up to 1794Mhz</*>
 <*>Linaro 6.5 compiller </*>
-<*>Perfomance otions for compiller</*>
+<*>Perfomance options for compiller</*>
 <*>Change sign kernel for pass PlayIntegrity</*>
 
 
